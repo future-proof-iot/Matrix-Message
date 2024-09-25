@@ -3,7 +3,7 @@
 # structure_message $content $formatted_content (optional)
 structure_message() {
   parsed="$(echo "$1" | markdown)"
-  body=$(jq -Rs --arg body "$1" --arg formatted_body "$parsed" --arg msgtype "m.$2" '{"msgtype": $msgtype, $body, "format": "org.matrix.custom.html", $formatted_body}' < /dev/null)
+  body=$(jq -Rs --arg body "$1" --arg formatted_body "$parsed" --arg msgtype "m.$2" '{$msgtype, $body, "format": "org.matrix.custom.html", $formatted_body}' < /dev/null)
   echo "$body"
 }
 
