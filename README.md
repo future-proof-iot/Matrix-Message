@@ -28,4 +28,5 @@ jobs:
          access_token: ${{ secrets.MATRIX_ACCESS_TOKEN }}
          message: "Hello, world"
          server: "matrix.org"
+         message_type: "notice"
 ```

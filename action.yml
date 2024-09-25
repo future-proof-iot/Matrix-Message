@@ -1,6 +1,6 @@
 name: matrix-message
 description: Send a message to a matrix channel
-author: Martin Pugh (pugh@s3kr.it)
+author: Martin Pugh (pugh@s3kr.it), Koen Zandberg (@bergzand)
 inputs:
   server:
     description: "Matrix server hostname"
@@ -18,6 +18,10 @@ inputs:
     description: "Message to send in plaintext format"
     default: ""
     required: true
+  message_type:
+    description: "Type of message to send, usually 'text' or 'notice'"
+    default: "text"
+    required: false
 runs:
   using: docker
   image: 'Dockerfile'
